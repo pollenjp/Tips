@@ -36,3 +36,7 @@ $ git rm -D branch_name     <-- Any case
 ```
 $ git push --delete origin branch_name
 ```
+
+
+# reference
+- <a href="https://qiita.com/iorionda/items/c7e0aca399371068a9b8">Git で不要になったローカルブランチ・リモートブランチを削除する方法 - Qiita</a>
