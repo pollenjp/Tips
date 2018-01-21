@@ -64,6 +64,11 @@ $ git reset --hard <commit>
 ```
 - <a href="http://www-creators.com/archives/1116">git commit の取り消し&やり直し、完全攻略。 | WWWクリエイターズ</a>
 
+## 
+```
+git push -f
+```
+<a href="https://qiita.com/ppworks/items/94c0107d98e55f903ea9">反則技 git push -f - Qiita</a>
 
 
 # reference
