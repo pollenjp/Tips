@@ -26,10 +26,12 @@
 ```
 
 ### エンコーディング (encoding)
+FORCING AN ENCODING: If the automatic detection doesn't work you must tell Vim what encoding the file is. <a href="http://vimdoc.sourceforge.net/htmldoc/usr_45.html">Vim documentation: usr_45</a>
 ```
 :e ++enc=CP932
 ```
 - <a href="http://nanasi.jp/articles/howto/file/open-with-format.html">ファイルの文字コード、フォーマットを指定して、読み直す。 </a>
+file is.<a href=""></a>
 
 
 ## Command mode
