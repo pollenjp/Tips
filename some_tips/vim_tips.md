@@ -1,27 +1,39 @@
 # vim tips
+- console
+- Command mode
+- Insert mode
+- Others
+- reference
 
 
 <vim>
 
 ## console
+### 画面分割
+(split)現在編集中にファイルを複製してhorizantalに分割
+(vertical)現在編集中にファイルを複製してverticalに分割
 ```
-:sp
+:sp (<file_name>)
+:vp (<file_name>)
 ```
-    - (split)現在編集中にファイルを複製してhorizantalに分割
+
+### 空白除去
 ```
-:vp
-```
-    - (vertical)現在編集中にファイルを複製してverticalに分割
-```
+# 行頭から行末まで空白だけで構成されている行の空白を削除
 :%s/^ *$//g
-```
-    - 行頭から行末まで空白だけで構成されている行をの空白を削除
-```
+# 行末にある空白行をすべて削除
 :%s/ *$//g
 ```
-    - 行末にある空白行をすべて削除
+
+### エンコーディング (encoding)
+```
+:e ++enc=CP932
+```
+- <a href="http://nanasi.jp/articles/howto/file/open-with-format.html">ファイルの文字コード、フォーマットを指定して、読み直す。 </a>
+
 
 ## Command mode
+### Searching word
 ```
 *
 ```
@@ -32,12 +44,12 @@
 ```
     - 単語の上にカーソルを持ってきて打ち込むと、カーソルより下にある__単語__を前方検索する。
 ```
-g*
+g + *
 ```
     - 単語の上にカーソルを持ってきて打ち込むと、カーソルより下にある単語が含まれる__文字列__を後方検索する。
     - ex) 'vi'という単語の上で打つと'vi', 'vim'という単語がマッチする。
 ```
-g#
+g + #
 ```
     - 単語の上にカーソルを持ってきて打ち込むと、カーソルより下にある単語が含まれる__文字列__を前方検索する。
     - ex) 'vi'という単語の上で打つと'vi', 'vim'という単語がマッチする。
@@ -53,7 +65,6 @@ Ctrl-s
     - vimではなくterminalの機能であり、terminalへの入力をロックする
 Ctrl-q
     - vimではなくterminalの機能であり、terminalへの入力ロックを解除する
-
 
 
 
