@@ -11,6 +11,14 @@ $ git rm <file1>
 $ git rm $(git ls-files --deleted)  
 ```
 
+## revert commit
+
+```
+$ git checkout --hard <hash_value>
+```
+
+- <a href="https://stackoverflow.com/questions/4114095/how-to-revert-git-repository-to-a-previous-commit>git checkout - How to revert Git repository to a previous commit? - Stack Overflow</a>
+
 ## localブランチ一覧
 ```
 $ git branch
@@ -26,6 +34,11 @@ $ git branch --remote
 $ git branch --all
 ```
 
+## local branch -> remote branch
+```
+$ git push --set-upstream origin feature_ar_model_sugisaki
+```
+
 ## localブランチ削除
 ```
 $ git rm -d branch_name     <-- After Merge
@@ -34,8 +47,10 @@ $ git rm -D branch_name     <-- Any case
 
 ## remoteブランチ削除
 ```
-$ git push --delete origin branch_name
+$ git push --delete origin <branch_name>
 ```
+
+- <a href="https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-both-locally-and-remotely>How do I delete a Git branch both locally and remotely? - Stack Overflow</a>
 
 ## gitのコミットログに'#'を先頭に書くことはできない
 - <a href='https://stackoverflow.com/questions/9725160/aborting-commit-due-to-empty-commit-message'>git - Aborting commit due to empty commit message - Stack Overflow</a>
