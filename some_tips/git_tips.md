@@ -64,6 +64,13 @@ $ git rebase --continue
 - <a href="https://www.granfairs.com/blog/staff/git-commit-fix">Gitのコミットメッセージを後から変更する方法をわかりやすく書いてみた | 株式会社グランフェアズ</a>
 - <a href="http://www-creators.com/archives/1116">git commit の取り消し&やり直し、完全攻略。 | WWWクリエイターズ</a>
 
+## merge
+<merging_branch_name>に他のブランチの内容を加える。
+```
+$ git checkout <merging_branch_name>
+$ git merge <ahead_branch_name>
+```
+
 ## git merge を取り消す
 ```
 $ git reset --hard ORG_HEAD
