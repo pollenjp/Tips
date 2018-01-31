@@ -2,6 +2,11 @@
 
 
 # xargs
+<a href="https://www.gnu.org/software/findutils/manual/html_node/find_html/xargs-options.html">xargs options - Finding Files - www.gnu.org</a>
+
+
+## ref
+- <a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20140331/547143/">Linuxコマンド集 - 【xargs】標準入力から生成したコマンドラインを実行する：ITpro</a>
 
 # iconv
 ## ファイルのエンコーディング形式変換
@@ -19,6 +24,17 @@ $ find . -type f | xargs file | grep  ":.*" | cut -d: -f1 | xargs -t -I{} iconv 
 
 
 # sed
+<a href="https://www.gnu.org/software/sed/manual/sed.html">sed, a stream editor - www.gnu.org</a>
+## 置換について
+<a href="https://www.gnu.org/software/sed/manual/sed.html#The-_0022s_0022-Command">The s command (sed, a stream editor - www.gnu.org)</a>
+置換では's'の次の文字がデリミタとして働くらしい。
+```
+$ sed -e s/aaa/bbb/
+$ sed -e s:aaa:bbb:
+# ちなみにこのコマンドでは各行に付き一度だけ置換が行われる。
+```
+１行に複数置換対象があり、それを置換したいときは最後の'/'の後ろに'g'を加える。
+
 ## CR+LFからLFへの置換
 改行コードがWindowsのものからLinuxのものへと変換する。
 ```
@@ -28,6 +44,15 @@ $ sed -e s/// <file_name> > <file_name>
 ```
 どうやら'Ctrl-M'は制御コードらしいので、'^M'と表示してくれないらしい。
 
+## 一括
+<a href="http://www.dab.hi-ho.ne.jp/sasa/biboroku/unix/sed-i.html">edでファイルを上書き保存</a>
+iオプション(--in-place)で上書き保存等が可能
+値を渡してバックアップファイル(.bak)を作成できる。
+```
+$ find . -type f | xargs file| grep ":.*CRLF" | cut -d: -f1 | xargs -t -I{} sed --in-place=.bak --expression 's///g' {}
+```
+
+### ref
 - <a href="http://www.atmarkit.co.jp/flinux/rensai/linuxtips/164linendm.html">テキストファイルの行末に^Mが表示される</a>
 - <a href="http://www.koikikukan.com/archives/2013/10/15-013333.php">改行コードの「^M」を削除する方法: 小粋空間</a>
 - <a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060227/230879/">Linuxコマンド集 - 【 sed 】 文字列の置換，行の削除を行う：ITpro</a>
