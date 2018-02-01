@@ -1,5 +1,14 @@
 # git_tips
 
+## コミット前に戻す
+### ファイル単位
+```
+$ git reset <file_name>
+```
+### 一括
+```
+$ git reset --hard HEAD
+```
 
 ## Gitで削除したファイルをコミット
 ```
