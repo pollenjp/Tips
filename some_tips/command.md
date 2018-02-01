@@ -1,5 +1,17 @@
 # Useful command on Linux
 
+# ls
+## lsの出力を１行ずつ表示したい。
+```
+$ ls -1
+```
+
+# rename
+## 一括でrename
+```
+# ex)
+$ ls -1 | xargs -t -I{} 's/aaa/bbb/g' {}
+```
 
 # xargs
 <a href="https://www.gnu.org/software/findutils/manual/html_node/find_html/xargs-options.html">xargs options - Finding Files - www.gnu.org</a>
