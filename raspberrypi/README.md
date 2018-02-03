@@ -43,9 +43,8 @@ ref:
 
 ## Too many authentication failures
 raspiにパスワード認証でsshする必要が有る場合に、Client側の設定で自動で鍵認証してしまい弾かれるパターンがある。それを回避するために明示的パスワード認証であることを示す。
-
 ```
-ssh username@IPAddress -o PreferredAuthentications=password
+ssh <username>@<IPAddress> -o PreferredAuthentications=<password>
 ```
 
 "$ man ssh"でoオプションについて見てみるとよい。
