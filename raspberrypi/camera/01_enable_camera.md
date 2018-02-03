@@ -1,10 +1,10 @@
 # Enable Camera on Raspberry Pi
 
-<img src="./img/enable01" alt="enable01">
-<img src="./img/enable02" alt="enable02">
-<img src="./img/enable03" alt="enable03">
-<img src="./img/enable04" alt="enable04">
-<img src="./img/enable05" alt="enable05">
-<img src="./img/enable06" alt="enable06">
-<img src="./img/enable07" alt="enable07">
-<img src="./img/enable08" alt="enable08">
+<img src="./img/enable01.png" alt="enable01.png">
+<img src="./img/enable02.png" alt="enable02.png">
+<img src="./img/enable03.png" alt="enable03.png">
+<img src="./img/enable04.png" alt="enable04.png">
+<img src="./img/enable05.png" alt="enable05.png">
+<img src="./img/enable06.png" alt="enable06.png">
+<img src="./img/enable07.png" alt="enable07.png">
+<img src="./img/enable08.png" alt="enable08.png">
