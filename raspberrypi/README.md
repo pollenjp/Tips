@@ -11,25 +11,6 @@ ref:
 
 
 
-
-## raspiに固定IPアドレス
-
-```
-/etc/network/interfaces # <-- 通常のLinux
-/etc/dhcpcd.conf        # <-- raspiにおけるdhcpcd設定
-```
-
-```
-$ man dhcpcd.conf
-```
-
-で開き、"static"でファイル内検索をかけると見つかる
-
-ref:
-- <a href="https://qiita.com/MarieKawasuji/items/b088ffb252a92eee8f5d">Raspberry Pi に固定IPアドレスを割り当てる方法（Raspbian Jessie）- Qiita</a>
-
-
-
 ## raspi Web server (Apache2)
 
 ref:
