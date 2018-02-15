@@ -1,47 +1,32 @@
 # Web Server on Raspberry Pi
 
+Let's Encytpt を用いてApache2をHTTPS化
+
 # Apache2 install
 ```
 $ sudo apt install apach2
 ```
 
-# Domain Name Setting
-```
-```
-
-## Inform my_ipaddress to MyDNS with "crontab"
-```
-$ crontab -e
-# and choose your favarite editor like 'vim'
-```
-add as below
-```
-# this command is excuted hourly, at 20 minutes past the hour
-20 * * * * <path_to_shell_file>
-```
-
-ref:
-- <a href="http://usicolog.nomaki.jp/engineering/raspberryPi/raspberryPi_Apache2.html">Apache2でラズパイをWebサーバに</a>
-- <a href="https://qiita.com/kaishero/items/ae9c4c845e0176d3d3e3">Raspberry PiでMyDNS.JPにIPアドレスを定期的に通知する - Qiita</a>
-
-
+ルーターやMyDNSなどでドメイン名の処理は終わらせておきます。
 
 # HTTPS
 
-# Let's Encrypt! (Stretch)
-This site in Japanese.(Jessie)
+## Let's Encrypt! (Stretch)
+次のサイトでは現段階では(Stretch)の方法は掲載されていませんがJessieと同様にできました。
 <a href="https://letsencrypt.jp/usage/">let's encrypt の使い方 - let's encrypt 総合ポータル</a>
 
-## First : Stretch backports
+## 1st : Stretch backports
 <a href="https://backports.debian.org/Instructions/">Debian Backports ›› Instructions</a>
+上のサイトに書かれている通り"/etc/apt/source.list"に以下の内容を書き加えます。
+一番下とかに追記して問題ないとおもいます。
 ```
 # /etc/apt/source.list
 
 # add for let's encrypt
-deb http://ftp.debian.org/debian jessie-backports main  # Jessie
 deb http://ftp.debian.org/debian Stretch-backports main  # Stretch
 ```
 
+その状態でアップデートします。
 ```
 pi@raspberrypi:~ $ sudo apt update
 取得:1 http://ftp.jp.debian.org/debian stretch-backports InRelease [91.8 kB]
@@ -56,7 +41,7 @@ N: このようなリポジトリから更新を安全に行うことができ�
 N: リポジトリの作成とユーザ設定の詳細は、apt-secure(8) man ページを参照してください。
 ```
 
-I don't have a key, so excute following command to request the key
+しかし、どうやらエラーが出てしまったようです。
 <a href="https://raspberrypi.stackexchange.com/questions/12258/where-is-the-archive-key-for-backports-debian-org">software installation - Where is the archive.key for backports.debian.org? - Raspberry Pi Stack Exchange</a>
 
 ```
@@ -136,7 +121,7 @@ pi@raspberrypi:~ $ sudo certbot
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 Plugins selected: Authenticator apache, Installer apache
 Enter email address (used for urgent renewal and security notices) (Enter 'c' to
-cancel): sample@sample.com
+cancel): polleninjp@gmail.com
 
 -------------------------------------------------------------------------------
 Please read the Terms of Service at
