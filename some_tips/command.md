@@ -1,5 +1,23 @@
 # Useful command on Linux
 
+## nkf
+
+- [ディレクトリ内のファイルの改行コードをLFに統一（nkfコマンド） - Qiita](https://qiita.com/kkdd/items/ac8796b790dc5978aadf)
+
+```
+       -L[uwm] -d -c
+           改行コードを変換する。
+
+           -Lu -d
+               unix (LF)
+```
+
+```
+find . -type f | xargs -I{0} bash -c 'nkf --guess {0} | xargs -I{1} nkf -w8 {0}'
+```
+
+- [UTF-8のBOMにはまった話 - Qiita](https://qiita.com/MuriNishimori/items/a89fe986e28909208e30)
+
 # ls
 ## lsの出力を１行ずつ表示したい。
 ```
@@ -50,7 +68,8 @@ $ sed -e s:aaa:bbb:
 ## CR+LFからLFへの置換
 改行コードがWindowsのものからLinuxのものへと変換する。
 ```
-$ sed -e s/// <file_name> > <file_name>
+$ sed -e s/
+// <file_name> > <file_name>
 # '^M'のところは'Ctrl-V' と'Ctrl-M'の同時押しで出力する。つまり、'Ctrl-V-M'
 # 標準出力を上書き
 ```
@@ -61,7 +80,8 @@ $ sed -e s/// <file_name> > <file_name>
 iオプション(--in-place)で上書き保存等が可能
 値を渡してバックアップファイル(.bak)を作成できる。
 ```
-$ find . -type f | xargs file| grep ":.*CRLF" | cut -d: -f1 | xargs -t -I{} sed --in-place=.bak --expression 's///g' {}
+$ find . -type f | xargs file| grep ":.*CRLF" | cut -d: -f1 | xargs -t -I{} sed --in-place=.bak --expression 's/
+//g' {}
 ```
 
 ### ref
