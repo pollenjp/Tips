@@ -1,5 +1,9 @@
 # Useful command on Linux
 
+この内容はこっちに移動
+https://hackmd.io/srWRrgoJTAa4cEziuN_a7w
+
+
 ## nkf
 
 - [ディレクトリ内のファイルの改行コードをLFに統一（nkfコマンド） - Qiita](https://qiita.com/kkdd/items/ac8796b790dc5978aadf)
